@@ -45,8 +45,9 @@ const ProductDetails = () => {
             src={`/api/v1/product/product-photo/${product._id}`}
             className="card-img-top"
             alt={product.name}
-            height="300"
-            width={"350px"}
+            height="640 px"
+            width={"640 px"}
+            display="flex"
           />
         </div>
         <div className="col-md-6 product-details-info">

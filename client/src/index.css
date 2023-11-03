@@ -35,12 +35,13 @@ font-family: 'Poppins', sans-serif;
   margin-top: 4px;
 }
 .search-form input {
-  border: none;
+  border: 1px solid black;
   border-radius: 5px;
 }
 .search-form input:focus {
   outline: none;
   box-shadow: none;
+  border: 1px solid rgb(222, 222, 222);
 }
 .search-form button {
   background-color: #000000;
@@ -110,9 +111,6 @@ font-family: 'Poppins', sans-serif;
 /* ========================================= */
 /* =========contact us ========= */
 .contactus {
-  margin: 0;
-  padding: 0;
-  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
