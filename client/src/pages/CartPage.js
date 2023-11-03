@@ -78,7 +78,7 @@ const CartPage = () => {
     }
   };
   return (
-    <Layout title={"Skyline.com Shopping Cart"}>
+    <Layout title={"Shopping Cart | Skyline.com "}>
       <div className=" cart-page">
         <div className="row">
           <div className="col-md-12">
