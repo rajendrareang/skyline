@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import Layout from "./../components/Layout/Layout";
 import { AiOutlineReload } from "react-icons/ai";
 import CarouselSlide from "../components/a_component/CarouselSlide";
+import ProductSlide from "../components/a_component/ProductSlide";
 import "../styles/Homepage.css";
 
 const HomePage = () => {
@@ -213,6 +214,9 @@ const HomePage = () => {
               </button>
             )}
           </div>
+        </div>
+        <div>
+          <ProductSlide/>
         </div>
       </div>
     </Layout>
