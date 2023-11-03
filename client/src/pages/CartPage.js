@@ -24,9 +24,9 @@ const CartPage = () => {
       cart?.map((item) => {
         total = total + item.price;
       });
-      return total.toLocaleString("en-US", {
+      return total.toLocaleString("en-IN", {
         style: "currency",
-        currency: "USD",
+        currency: "INR",
       });
     } catch (error) {
       console.log(error);
@@ -78,7 +78,7 @@ const CartPage = () => {
     }
   };
   return (
-    <Layout>
+    <Layout title={"Skyline.com Shopping Cart"}>
       <div className=" cart-page">
         <div className="row">
           <div className="col-md-12">
@@ -113,7 +113,10 @@ const CartPage = () => {
                   <div className="col-md-4">
                     <p>{p.name}</p>
                     <p>{p.description.substring(0, 30)}</p>
-                    <p>Price : {p.price}</p>
+                    <p>Price : {p.price.toLocaleString("en-IN", {
+              style: "currency",
+              currency: "INR",
+            })}</p>
                   </div>
                   <div className="col-md-4 cart-remove-btn">
                     <button

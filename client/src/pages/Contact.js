@@ -3,7 +3,7 @@ import Layout from "./../components/Layout/Layout";
 import { BiMailSend, BiPhoneCall, BiSupport } from "react-icons/bi";
 const Contact = () => {
   return (
-    <Layout title={"Contact us"}>
+    <Layout title={"Online Shopping India | Buy Laptops, Speakers, Goceries "}>
       <div className="row contactus ">
         <div className="col-md-6 ">
           <img

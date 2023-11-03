@@ -4,7 +4,7 @@ import { useSearch } from "../context/search";
 const Search = () => {
   const [values, setValues] = useSearch();
   return (
-    <Layout title={"Search results"}>
+    <Layout title={"Search results | Skyline.com Buy Products Online"}>
       <div className="container">
         <div className="text-center">
           <h1>Search Resuts</h1>

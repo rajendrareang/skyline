@@ -3,13 +3,13 @@ import Layout from "./../components/Layout/Layout";
 
 const Policy = () => {
   return (
-    <Layout title={"Privacy Policy"}>
+    <Layout title={"Privacy Policy Skyline.com - Skyline Customer Service"}>
       <div className="container">
         <div className="row">
           <div className="col-md-8 offset-md-2">
             <h1>Privacy Policy for Skyline</h1>
-            <p>Last Updated: 27/03/2023</p>
-            <h2>1. Introduction</h2>
+            <p>Last Updated: <u>27/03/2023</u></p>
+            <h4>1. Introduction</h4>
             <p>
               Welcome to Skyline's Privacy Policy. This document outlines how we
               collect, use, disclose, and protect your personal information when
@@ -17,7 +17,7 @@ const Policy = () => {
               you agree to the practices described in this policy.
             </p>
 
-            <h2>2. Information We Collect</h2>
+            <h4>2. Information We Collect</h4>
             <p>
               We may collect the following types of information:
             </p>
@@ -45,7 +45,7 @@ const Policy = () => {
               </li>
             </ul>
 
-            <h2>3. How We Use Your Information</h2>
+            <h4>3. How We Use Your Information</h4>
             <p>
               We use your personal information for the following purposes:
             </p>
@@ -68,7 +68,7 @@ const Policy = () => {
               </li>
             </ul>
 
-            <h2>4. Information Sharing and Disclosure</h2>
+            <h4>4. Information Sharing and Disclosure</h4>
             <p>
               We do not sell, trade, or rent your personal information to third
               parties. However, we may share your information with:
@@ -87,7 +87,7 @@ const Policy = () => {
               </li>
             </ul>
 
-            <h2>5. Data Security</h2>
+            <h4>5. Data Security</h4>
             <p>
               We take reasonable measures to protect your data from unauthorized
               access, disclosure, alteration, or destruction. However, no method
@@ -95,7 +95,7 @@ const Policy = () => {
               secure.
             </p>
 
-            <h2>6. Your Choices</h2>
+            <h4>6. Your Choices</h4>
             <p>
               You have the right to:
             </p>
@@ -111,20 +111,20 @@ const Policy = () => {
               </li>
             </ul>
 
-            <h2>7. Children's Privacy</h2>
+            <h4>7. Children's Privacy</h4>
             <p>
               Our services are not intended for children under the age of 13. We
               do not knowingly collect personal information from children.
             </p>
 
-            <h2>8. Changes to this Privacy Policy</h2>
+            <h4>8. Changes to this Privacy Policy</h4>
             <p>
               We may update this policy from time to time. Any changes will be
               posted on this page, and the revised policy will be effective
               immediately upon posting.
             </p>
 
-            <h2>9. Contact Us</h2>
+            <h4>9. Contact Us</h4>
             <p>
               If you have questions, concerns, or requests regarding your personal
               information or this Privacy Policy, please contact us at <a href="#">www.help@skyline.com</a>.

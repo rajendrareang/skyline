@@ -25,9 +25,9 @@ const Layout = ({ children, title, description, keywords, author }) => {
 };
 
 Layout.defaultProps = {
-  title: "Ecommerce app - shop now",
+  title: "Online Shopping site Skyline.com Shop Now",
   description: "mern stack project",
-  keywords: "mern,react,node,mongodb",
+  keywords: "mern,react,node,mongodb, skyline, shopping, ecommerce, mobiles, laptop, groceries",
   author: "Rajendra Reang",
 };
 
