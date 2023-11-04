@@ -111,8 +111,8 @@ const HomePage = () => {
   return (
     <Layout title={"Online Shopping Site in India for Mobiles, Smartphones, Clothing, Shoes, Slippers"}>
 
- <CarouselSlide/>
- 
+      <CarouselSlide />
+
       <div className="container-fluid row mt-3 home-page">
         <div className="col-md-3 filters">
           <h4 className="text-center">Filter By Category</h4>
@@ -171,11 +171,12 @@ const HomePage = () => {
                   </p>
                   <div className="card-name-price">
                     <button
-                      className="btn btn-info ms-1"
+                      className="btn btn-outline-dark"
                       onClick={() => navigate(`/product/${p.slug}`)}
                     >
                       More Details
                     </button>
+
                     <button
                       className="btn btn-dark ms-1"
                       onClick={() => {
@@ -216,7 +217,7 @@ const HomePage = () => {
           </div>
         </div>
         <div>
-          <ProductSlide/>
+          <ProductSlide />
         </div>
       </div>
     </Layout>

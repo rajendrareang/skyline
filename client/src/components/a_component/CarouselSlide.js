@@ -3,7 +3,7 @@ import { Carousel } from 'react-bootstrap';
 
 function CarouselSlide(){
 
-    const image1 = require('../../Assets/Carousel/carousel1.jpg');
+    const image1 = require('../../Assets/Carousel/Carousel1.jpeg');
     const image2 = require('../../Assets/Carousel/carousel2.jpg');
     const image3 = require('../../Assets/Carousel/carousel3.jpg');
     const image4 = require('../../Assets/Carousel/carousel4.jpg');
