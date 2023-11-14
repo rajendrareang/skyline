@@ -29,9 +29,7 @@ function ProductSlide() {
   return (
     <div className='slide'>
       <br/>
-      <div className='Title-ShoeSlide'>
         <h1>You Might Also Like</h1>
-      </div>
       <div style={styles.shoeSlide}>
         <div className='product-card' style={styles.productCard}>
           <ProductCard

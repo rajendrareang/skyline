@@ -54,14 +54,14 @@ const Header = () => {
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
-                  to={"/categories"}
+                  to={"/get-category"}
                   data-bs-toggle="dropdown"
                 >
                   Categories
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" to={"/categories"}>
+                    <Link className="dropdown-item" to={"/get-category"}>
                       All Categories
                     </Link>
                   </li>
@@ -69,7 +69,7 @@ const Header = () => {
                     <li key={c.slug}>
                       <Link
                         className="dropdown-item"
-                        to={`/category/${c.slug}`}
+                        to={`/single-category/${c.slug}`}
                       >
                         {c.name}
                       </Link>
