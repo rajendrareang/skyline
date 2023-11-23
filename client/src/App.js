@@ -24,16 +24,15 @@ import Categories from "./pages/Categories";
 import CategoryProduct from "./pages/CategoryProduct";
 import CartPage from "./pages/CartPage";
 import AdminOrders from "./pages/Admin/AdminOrders";
-import "../src/App.css"
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/product/:slug" element={<ProductDetails />} />
-        <Route path="/get-category" element={<Categories />} />
+        <Route path="/categories" element={<Categories />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/single-category/:slug" element={<CategoryProduct />} />
+        <Route path="/category/:slug" element={<CategoryProduct />} />
         <Route path="/search" element={<Search />} />
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />

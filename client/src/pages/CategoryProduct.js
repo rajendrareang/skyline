@@ -59,7 +59,7 @@ const CategoryProduct = () => {
                       >
                         More Details
                       </button>
-                      <button
+                      {/* <button
                     className="btn btn-dark ms-1"
                     onClick={() => {
                       setCart([...cart, p]);
@@ -71,13 +71,13 @@ const CategoryProduct = () => {
                     }}
                   >
                     ADD TO CART
-                  </button>
+                  </button> */}
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="m-2 p-3">
+            {/* <div className="m-2 p-3">
             {products && products.length < total && (
               <button
                 className="btn btn-warning"
@@ -89,7 +89,7 @@ const CategoryProduct = () => {
                 {loading ? "Loading ..." : "Loadmore"}
               </button>
             )}
-          </div>
+          </div> */}
           </div>
         </div>
       </div>
