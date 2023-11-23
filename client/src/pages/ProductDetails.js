@@ -42,6 +42,7 @@ const ProductDetails = () => {
   return (
     <Layout>
       <div className="row container product-details">
+        <div className="col-md-1"></div>
         <div className="col-md-6">
           <img
             src={`/api/v1/product/product-photo/${product._id}`}
@@ -52,31 +53,35 @@ const ProductDetails = () => {
             display="flex"
           />
         </div>
-        <div className="col-md-6 product-details-info">
+        <div className="col-md-1"></div>
+
+        <div className="col-md-4 product-details-info">
           <h1 className="text-center">Product Details</h1>
           <hr />
-          <h6>Name : {product.name}</h6>
-          <h6>Description : {product.description}</h6>
-          <h6>
-            Price:
-            {product?.price?.toLocaleString("en-IN", {
+          <h4>{product.name}</h4>
+          <h6>{product.description}</h6>
+          <h5><strong>
+            MRP: {product?.price?.toLocaleString("en-IN", {
               style: "currency",
               currency: "INR",
             })}
-          </h6>
+          </strong>
+          </h5>
 
-          <h6>Category : {product?.category?.name}</h6>
+          {/* <h6>Category : {product?.category?.name}</h6> */}
+          <p><br /><br /></p>
           <button
-                      className="btn btn-dark ms-1"
-                      onClick={() => {
-                        setCart([...cart, product]);
-                        localStorage.setItem(
-                          "cart",
-                          JSON.stringify([...cart, product])
-                        );
-                        toast.success("Item Added to cart");
-                      }}
-                    >ADD TO CART</button>
+            className="btn btn-dark ms-1"
+            style={{ width: '200px' }} // Adjust the width value as needed
+            onClick={() => {
+              setCart([...cart, product]);
+              localStorage.setItem("cart", JSON.stringify([...cart, product]));
+              toast.success("Item Added to cart");
+            }}
+          >
+            ADD TO CART
+          </button>
+
         </div>
       </div>
       <hr />

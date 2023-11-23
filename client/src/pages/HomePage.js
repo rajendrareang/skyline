@@ -6,6 +6,7 @@ import { useCart } from "../context/cart";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Layout from "./../components/Layout/Layout";
+import ProductCard from "../components/ProductCard";
 import { AiOutlineReload } from "react-icons/ai";
 import CarouselSlide from "../components/a_component/CarouselSlide";
 import ProductSlide from "../components/a_component/ProductSlide";
@@ -113,8 +114,8 @@ const HomePage = () => {
 
       <CarouselSlide />
 
-      <div className="container-fluid row mt-3 home-page">
-        <div className="col-md-3 filters">
+      <div className="container-fluid row mt-2 home-page">
+        <div className="col-md-2 filters">
           <h4 className="text-center">Filter By Category</h4>
           <div className="d-flex flex-column">
             {categories?.map((c) => (
@@ -127,7 +128,7 @@ const HomePage = () => {
             ))}
           </div>
           {/* price filter */}
-          <h4 className="text-center mt-4">Filter By Price</h4>
+          <h4 className="text-center mt-2">Filter By Price</h4>
           <div className="d-flex flex-column">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
               {Prices?.map((p) => (
@@ -146,53 +147,11 @@ const HomePage = () => {
             </button>
           </div>
         </div>
-        <div className="col-md-9 ">
+        <div className="col-md-10 ">
           <h1 className="text-center">All Products</h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
-              <div className="card m-2" key={p._id}>
-                <img
-                  src={`/api/v1/product/product-photo/${p._id}`}
-                  className="card-img-top"
-                  alt={p.name}
-                />
-                <div className="card-body">
-                  <div className="card-name-price">
-                    <h5 className="card-title">{p.name}</h5>
-                    <h5 className="card-title card-price">
-                      {p.price.toLocaleString("en-IN", {
-                        style: "currency",
-                        currency: "INR",
-                      })}
-                    </h5>
-                  </div>
-                  <p className="card-text ">
-                    {p.description.substring(0, 60)}...
-                  </p>
-                  <div className="card-name-price">
-                    <button
-                      className="btn btn-outline-dark"
-                      onClick={() => navigate(`/product/${p.slug}`)}
-                    >
-                      More Details
-                    </button>
-
-                    <button
-                      className="btn btn-dark ms-1"
-                      onClick={() => {
-                        setCart([...cart, p]);
-                        localStorage.setItem(
-                          "cart",
-                          JSON.stringify([...cart, p])
-                        );
-                        toast.success("Item Added to cart");
-                      }}
-                    >
-                      ADD TO CART
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ProductCard key={p._id} product={p} />
             ))}
           </div>
           <div className="m-2 p-3">
@@ -220,35 +179,35 @@ const HomePage = () => {
           <ProductSlide />
         </div>
         <div className="description">
-          <br/><h6><strong>Skyline.com: Your Ultimate Shopping Destination</strong></h6>
-<p>E-commerce is transforming the way we shop, and at Skyline.com, we're here to revolutionize your shopping experience. Why waste time hopping from one store to another in search of the latest products when you can find everything you need with a simple click? Skyline.com offers a diverse and extensive range of products to cater to all your needs and desires.</p>
+          <br /><h6><strong>Skyline.com: Your Ultimate Shopping Destination</strong></h6>
+          <p>E-commerce is transforming the way we shop, and at Skyline.com, we're here to revolutionize your shopping experience. Why waste time hopping from one store to another in search of the latest products when you can find everything you need with a simple click? Skyline.com offers a diverse and extensive range of products to cater to all your needs and desires.</p>
 
-<h6><strong>Unmatched Product Variety</strong></h6>
-<p>Skyline.com is your one-stop shop for all your shopping needs. From cutting-edge electronics like smartphones, laptops, tablets, and accessories to the latest in fashion trends, including clothing, shoes, and lifestyle accessories, we've got it all. Looking to upgrade your living space? We offer modern furniture like sofas, dining tables, and wardrobes. Our selection also includes appliances that make your life easier, such as washing machines, TVs, ACs, mixer grinder juicers, and other time-saving kitchen gadgets. For your home decor needs, we offer everything from cushion covers and mattresses to bedsheets, as well as a variety of toys and musical instruments. Whatever you're looking for, you can be confident you'll find it right here.</p>
+          <h6><strong>Unmatched Product Variety</strong></h6>
+          <p>Skyline.com is your one-stop shop for all your shopping needs. From cutting-edge electronics like smartphones, laptops, tablets, and accessories to the latest in fashion trends, including clothing, shoes, and lifestyle accessories, we've got it all. Looking to upgrade your living space? We offer modern furniture like sofas, dining tables, and wardrobes. Our selection also includes appliances that make your life easier, such as washing machines, TVs, ACs, mixer grinder juicers, and other time-saving kitchen gadgets. For your home decor needs, we offer everything from cushion covers and mattresses to bedsheets, as well as a variety of toys and musical instruments. Whatever you're looking for, you can be confident you'll find it right here.</p>
 
-<h6><strong>Shop at Your Convenience</strong></h6>
-<p>At Skyline.com, we understand that your life doesn't always follow a 9 to 5 schedule. That's why we never close. You can shop in your PJs, late at night, or in the early hours of the morning—whenever it's most convenient for you.</p>
+          <h6><strong>Shop at Your Convenience</strong></h6>
+          <p>At Skyline.com, we understand that your life doesn't always follow a 9 to 5 schedule. That's why we never close. You can shop in your PJs, late at night, or in the early hours of the morning—whenever it's most convenient for you.</p>
 
-<h6><strong>Irresistible Prices</strong></h6>
-<p>What sets Skyline.com apart are our year-round shopping festivals and events, featuring prices that are simply irresistible. You'll often find yourself picking up more than you initially planned. If you're wondering why you should choose Skyline.com when there are numerous other options available to you, read on.</p>
+          <h6><strong>Irresistible Prices</strong></h6>
+          <p>What sets Skyline.com apart are our year-round shopping festivals and events, featuring prices that are simply irresistible. You'll often find yourself picking up more than you initially planned. If you're wondering why you should choose Skyline.com when there are numerous other options available to you, read on.</p>
 
-<h6><strong>Skyline Rewards</strong></h6>
-<p>At Skyline.com, we value your loyalty, which is why we've launched Skyline Rewards, a loyalty program that rewards our regular customers. It's completely free to join, and all you need is a certain number of points to become a member. When you shop with us, you'll earn points that can be redeemed for a variety of exciting services, including memberships, discounts, and more. Our Plus members enjoy exclusive benefits like free delivery, early access during sales and shopping festivals, exchange offers, and priority customer service. In short, the more you shop, the more you earn!</p>
+          <h6><strong>Skyline Rewards</strong></h6>
+          <p>At Skyline.com, we value your loyalty, which is why we've launched Skyline Rewards, a loyalty program that rewards our regular customers. It's completely free to join, and all you need is a certain number of points to become a member. When you shop with us, you'll earn points that can be redeemed for a variety of exciting services, including memberships, discounts, and more. Our Plus members enjoy exclusive benefits like free delivery, early access during sales and shopping festivals, exchange offers, and priority customer service. In short, the more you shop, the more you earn!</p>
 
-<h6><strong>No Cost EMI</strong></h6>
-<p>We believe in making high-end products accessible to everyone. Our No Cost EMI plan allows you to shop for select mobiles, laptops, appliances, and more without paying any processing fees. This makes it easy to get the products you desire without breaking the bank.</p>
+          <h6><strong>No Cost EMI</strong></h6>
+          <p>We believe in making high-end products accessible to everyone. Our No Cost EMI plan allows you to shop for select mobiles, laptops, appliances, and more without paying any processing fees. This makes it easy to get the products you desire without breaking the bank.</p>
 
-<h6><strong>EMI on Debit Cards</strong></h6>
-<p>Skyline.com is committed to making online shopping accessible to all. That's why we offer EMI on Debit Cards, giving you the freedom to shop without worrying about monthly cash flow interruptions. We've partnered with leading banks to provide this facility, so you can shop confidently with us.</p>
+          <h6><strong>EMI on Debit Cards</strong></h6>
+          <p>Skyline.com is committed to making online shopping accessible to all. That's why we offer EMI on Debit Cards, giving you the freedom to shop without worrying about monthly cash flow interruptions. We've partnered with leading banks to provide this facility, so you can shop confidently with us.</p>
 
-<h6><strong>Product Exchange Offers</strong></h6>
-<p>Upgrade to the latest gadgets without breaking the bank. Skyline.com offers instant discounts when you exchange your old products for new ones. Our experts will calculate the value of your old item, provided it's in good working condition and screen damage-free. If a product is eligible for an exchange offer, you'll see the 'Buy with Exchange' option on the product description. Be smart and opt for an exchange whenever possible.</p>
+          <h6><strong>Product Exchange Offers</strong></h6>
+          <p>Upgrade to the latest gadgets without breaking the bank. Skyline.com offers instant discounts when you exchange your old products for new ones. Our experts will calculate the value of your old item, provided it's in good working condition and screen damage-free. If a product is eligible for an exchange offer, you'll see the 'Buy with Exchange' option on the product description. Be smart and opt for an exchange whenever possible.</p>
 
-<h6><strong>Discover a World of Possibilities at Skyline.com</strong></h6>
-<p>Whatever you need, you'll find it at Skyline.com. From cutting-edge Mobile Phones to Electronic Devices and Accessories, Large Appliances, Small Home Appliances, Lifestyle products, Home and Furniture, Baby and Kids essentials, Books, Sports and Games, and even Grocery/Supermart items, we've got you covered.</p>
+          <h6><strong>Discover a World of Possibilities at Skyline.com</strong></h6>
+          <p>Whatever you need, you'll find it at Skyline.com. From cutting-edge Mobile Phones to Electronic Devices and Accessories, Large Appliances, Small Home Appliances, Lifestyle products, Home and Furniture, Baby and Kids essentials, Books, Sports and Games, and even Grocery/Supermart items, we've got you covered.</p>
 
-<p><strong>Skyline.com is dedicated to providing a seamless and enjoyable online shopping experience, ensuring you have access to the best products, competitive prices, and top-notch customer service. Shop with us today and redefine your shopping experience.</strong></p>
-</div>
+          <p><strong>Skyline.com is dedicated to providing a seamless and enjoyable online shopping experience, ensuring you have access to the best products, competitive prices, and top-notch customer service. Shop with us today and redefine your shopping experience.</strong></p>
+        </div>
       </div>
     </Layout>
   );
