@@ -113,9 +113,12 @@ const CartPage = () => {
                   </div>
                  
                   <div className="col-md-4">
-                    <p>{p.name}</p>
+                    <h6><strong>{p.name}</strong></h6>
                     <p>{p.description.substring(0, 30)}</p>
-                    <p>Price : {p.price}</p>
+                    <h6 style={{ color: 'green', fontWeight: 'bold' }}>
+  MRP: {p.price.toLocaleString("en-IN", { style: "currency", currency: "INR" })}
+</h6>
+
                   </div>
                   <div className="col-md-4 cart-remove-btn">
                     <button

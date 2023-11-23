@@ -19,7 +19,7 @@
   object-fit: cover; /* Maintain aspect ratio while covering the container */
 }
 
-.cart-page z{
+.cart-page .card {
   padding: 5px !important;
   height: 213px !important;
   margin-bottom: 5px !important;

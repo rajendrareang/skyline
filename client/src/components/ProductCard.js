@@ -1,7 +1,6 @@
 // ProductCard.js
 
 import React from "react";
-import "../styles/Card.css";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/cart";
 import toast from "react-hot-toast";
@@ -24,22 +23,19 @@ const ProductCard = ({ product }) => {
         alt={product.name}
       />
       <div className="card-body">
-        <div className="card-name">
-        
-          <h5 ><strong>{product.name}</strong></h5>
-          </div>
-
+        <div className="card-name-price">
+          <h5 className="card-title">{product.name}</h5>
+        </div>
         <p className="card-text ">{product.description.substring(0, 60)}...</p>
-        <div className="card-price">
-          <h6><strong>
-             MRP: {product.price.toLocaleString("en-IN", {
+        <div className="card-name-price">
+        <h6 className="card-title card-price">MRP: {product.price.toLocaleString("en-IN", {
               style: "currency",
               currency: "INR",
             })}
-            </strong>
           </h6>
-          <p></p>
         </div>
+ 
+
         <div className="card-name-price">
           <button
             className="btn btn-outline-dark"
