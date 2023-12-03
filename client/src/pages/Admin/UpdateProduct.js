@@ -18,6 +18,7 @@ const UpdateProduct = () => {
   const [quantity, setQuantity] = useState("");
   const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
+  const [gender, setGender] = useState("");
   const [id, setId] = useState("");
 
   //get single product
@@ -34,6 +35,7 @@ const UpdateProduct = () => {
       setQuantity(data.product.quantity);
       setShipping(data.product.shipping);
       setCategory(data.product.category._id);
+      setGender(data.product.gender);
     } catch (error) {
       console.log(error);
     }
@@ -103,13 +105,13 @@ const UpdateProduct = () => {
   };
   return (
     <Layout title={"Dashboard - Create Product"}>
-      <div className="container-fluid m-3 p-3">
+      <div className="container-fluid m-3 p-3 dashboard">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-2">
             <AdminMenu />
           </div>
-          <div className="col-md-9">
-            <h1>Update Product</h1>
+          <div className="col-md-8">
+            <h1><b>Update Product</b></h1>
             <div className="m-1 w-75">
               <Select
                 bordered={false}
@@ -198,6 +200,8 @@ const UpdateProduct = () => {
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
+          
+              
               <div className="mb-3">
                 <Select
                   bordered={false}

@@ -68,7 +68,7 @@ export const getProductController = async (req, res) => {
       .find({})
       .populate("category")
       .select("-photo")
-      .limit(12)
+      // .limit(12)
       .sort({ createdAt: -1 });
     res.status(200).send({
       success: true,
@@ -143,7 +143,7 @@ export const deleteProductController = async (req, res) => {
   }
 };
 
-//upate producta
+//upate product
 export const updateProductController = async (req, res) => {
   try {
     const { name, description, price, category, quantity, shipping } =
@@ -235,7 +235,7 @@ export const productCountController = async (req, res) => {
 // product list base on page
 export const productListController = async (req, res) => {
   try {
-    const perPage = 6;
+    const perPage = 12;
     const page = req.params.page ? req.params.page : 1;
     const products = await productModel
       .find({})
@@ -290,7 +290,7 @@ export const realtedProductController = async (req, res) => {
         _id: { $ne: pid },
       })
       .select("-photo")
-      .limit(3)
+      // .limit(3)
       .populate("category");
     res.status(200).send({
       success: true,
@@ -306,7 +306,7 @@ export const realtedProductController = async (req, res) => {
   }
 };
 
-// get prdocyst by catgory
+// get product by catgory
 export const productCategoryController = async (req, res) => {
   try {
     const category = await categoryModel.findOne({ slug: req.params.slug });

@@ -9,7 +9,6 @@ import Layout from "./../components/Layout/Layout";
 import { AiOutlineReload } from "react-icons/ai";
 import ProductCard from "../components/ProductCard";
 import CarouselSlide from "../components/a_component/CarouselSlide";
-import ProductSlide from "../components/a_component/ProductSlide";
 import "../styles/Homepage.css";
 
 const HomePage = () => {
@@ -109,6 +108,8 @@ const HomePage = () => {
       console.log(error);
     }
   };
+
+  
   return (
     <Layout title={"Online Shopping Site in India for Mobiles, Smartphones, Clothing, Shoes, Slippers"}>
 
@@ -118,7 +119,7 @@ const HomePage = () => {
         <div className="col-md-2 filters">
           <h4 className="text-center">Filter By Category</h4>
           <div className="d-flex flex-column">
-            {categories?.map((c) => (
+            {categories?.slice(0, 9).map((c) => (
               <Checkbox
                 key={c._id}
                 onChange={(e) => handleFilter(e.target.checked, c._id)}
@@ -140,7 +141,7 @@ const HomePage = () => {
           </div>
           <div className="d-flex flex-column">
             <button
-              className="btn btn-danger"
+              className="btn btn-dark"
               onClick={() => window.location.reload()}
             >
               RESET FILTERS
@@ -148,7 +149,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className="col-md-10 ">
-          <h1 className="text-center">All Products</h1>
+          <h1 className="text-center"></h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
          <ProductCard key={p._id} product={p} />
@@ -175,9 +176,7 @@ const HomePage = () => {
             )}
           </div>
         </div>
-        <div>
-          <ProductSlide />
-        </div>
+       
         <div className="description">
           <br/><h6><strong>Skyline.com: Your Ultimate Shopping Destination</strong></h6>
 <p>E-commerce is transforming the way we shop, and at Skyline.com, we're here to revolutionize your shopping experience. Why waste time hopping from one store to another in search of the latest products when you can find everything you need with a simple click? Skyline.com offers a diverse and extensive range of products to cater to all your needs and desires.</p>

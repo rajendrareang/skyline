@@ -51,6 +51,11 @@ const Header = () => {
                   Home
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/trends" className="nav-link ">
+                  Trends
+                </NavLink>
+              </li>
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
@@ -65,7 +70,7 @@ const Header = () => {
                       All Categories
                     </Link>
                   </li>
-                  {categories?.map((c) => (
+                  {categories?.slice(0, 9).map((c) => (
                     <li key={c.slug}>
                       <Link
                         className="dropdown-item"

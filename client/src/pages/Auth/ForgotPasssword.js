@@ -35,9 +35,11 @@ const ForgotPasssword = () => {
   };
   return (
     <Layout title={"Forgot Password - Ecommerce APP"}>
-      <div className="form-container ">
-        <form onSubmit={handleSubmit}>
-          <h4 className="title">RESET PASSWORD</h4>
+      <div className="form-container" style={{ minHeight: "100vh" }}>
+        <form style={{
+                borderRadius: "15px"
+              }} onSubmit={handleSubmit}>
+          <h4 className="title"><u>RESET PASSWORD</u></h4>
 
           <div className="mb-3">
             <input

@@ -4,10 +4,10 @@ import Layout from "./../components/Layout/Layout";
 const Policy = () => {
   return (
     <Layout title={"Privacy Policy Skyline.com - Skyline Customer Service"}>
-      <div className="container">
-        <div className="row">
+      <div  className="container">
+        <div className="row" >
           <div className="col-md-8 offset-md-2">
-            <h1>Privacy Policy for Skyline</h1>
+            <h1><b><u>Privacy Policy of Skyline</u></b></h1>
             <p>Last Updated: <u>27/03/2023</u></p>
             <h4>1. Introduction</h4>
             <p>

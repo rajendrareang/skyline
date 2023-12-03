@@ -12,7 +12,7 @@
   flex-wrap: wrap;
 }
 .home-page .card {
-  background-color: rgba(128, 128, 128, 0.097);
+  background-color: rgb(253, 253, 253);
   width: 18rem;
 }
 .home-page .card-name-price {
@@ -75,7 +75,7 @@ filters
 }
 
 .loadmore {
-  color: green;
+  color: rgb(23, 23, 23);
   font-weight: bold;
   font-size: 20px !important;
 }

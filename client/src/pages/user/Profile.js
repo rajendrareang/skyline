@@ -53,13 +53,21 @@ const Profile = () => {
     <Layout title={"Your Profile"}>
       <div className="container-fluid m-3 p-3 dashboard">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-2">
             <UserMenu />
           </div>
           <div className="col-md-8">
-            <div className="form-container" style={{ marginTop: "-40px" }}>
-              <form onSubmit={handleSubmit}>
-                <h4 className="title">USER PROFILE</h4>
+            <div className="form-container"
+              style={{
+                marginTop: "-40px"
+              }}
+
+            >
+              <form style={{
+                borderRadius: "10px"
+              }}
+                onSubmit={handleSubmit}>
+                <h4 className="title" >USER PROFILE</h4>
                 <div className="mb-3">
                   <input
                     type="text"
@@ -113,7 +121,7 @@ const Profile = () => {
                   />
                 </div>
 
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-primary" >
                   UPDATE
                 </button>
               </form>

@@ -37,7 +37,7 @@ const CategoryProduct = () => {
                   <ProductCard key={p._id} product={p} />
               ))}
             </div>
-            <div className="m-2 p-3">
+            {/* <div className="m-2 p-3">
             {products && products.length < total && (
               <button
                 className="btn btn-warning"
@@ -49,7 +49,7 @@ const CategoryProduct = () => {
                 {loading ? "Loading ..." : "Loadmore"}
               </button>
             )}
-          </div>
+          </div> */}
           </div>
         </div>
       </div>

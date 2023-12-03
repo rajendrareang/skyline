@@ -2,19 +2,20 @@ import React from "react";
 import Layout from "./../components/Layout/Layout";
 
 const About = () => {
+  const aboutImg = require("../Assets/skyline.jpeg");
   return (
     <Layout title={"Skyline pvt. ltd. Corporation"}>
       <div className="container">
         <div className="row">
           <div className="col-md-6">
             <img
-              src="/images/about.jpeg"
+              src={aboutImg}
               alt="About Skyline"
-              style={{ width: "100%" }}
+              style={{ width: "90%" }}
             />
           </div>
           <div className="col-md-6">
-            <h1>About Us</h1>
+            <h1><b><u>About Skyline</u></b></h1>
             <p className="text-justify mt-2">
               Welcome to Skyline, where online shopping meets excellence and convenience. At Skyline, we're more than just an e-commerce platform; we're a passionate team of individuals committed to bringing you a curated collection of the finest products that elevate your lifestyle.
               <br /><br />

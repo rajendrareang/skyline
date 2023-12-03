@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import "../../styles/Card.css";
 import AdminMenu from "../../components/Layout/AdminMenu";
 import Layout from "../../components/Layout/Layout";
 import { useAuth } from "../../context/auth";
@@ -10,11 +11,11 @@ const { Option } = Select;
 
 const AdminOrders = () => {
   const [status, setStatus] = useState([
-    "Not Process",
+    "Not Processed",
     "Processing",
     "Shipped",
-    "deliverd",
-    "cancel",
+    "Delivered",
+    "Cancelled",
   ]);
   const [changeStatus, setCHangeStatus] = useState("");
   const [orders, setOrders] = useState([]);
@@ -44,72 +45,78 @@ const AdminOrders = () => {
   };
   return (
     <Layout title={"All Orders Data"}>
-      <div className="row dashboard">
-        <div className="col-md-3">
-          <AdminMenu />
-        </div>
-        <div className="col-md-9">
-          <h1 className="text-center">All Orders</h1>
-          {orders?.map((o, i) => {
-            return (
-              <div className="border shadow">
-                <table className="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Buyer</th>
-                      <th scope="col"> date</th>
-                      <th scope="col">Payment</th>
-                      <th scope="col">Quantity</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>{i + 1}</td>
-                      <td>
-                        <Select
-                          bordered={false}
-                          onChange={(value) => handleChange(o._id, value)}
-                          defaultValue={o?.status}
-                        >
-                          {status.map((s, i) => (
-                            <Option key={i} value={s}>
-                              {s}
-                            </Option>
-                          ))}
-                        </Select>
-                      </td>
-                      <td>{o?.buyer?.name}</td>
-                      <td>{moment(o?.createAt).fromNow()}</td>
-                      <td>{o?.payment.success ? "Success" : "Failed"}</td>
-                      <td>{o?.products?.length}</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div className="container">
-                  {o?.products?.map((p, i) => (
-                    <div className="row mb-2 p-3 card flex-row" key={p._id}>
-                      <div className="col-md-4">
-                        <img
-                          src={`/api/v1/product/product-photo/${p._id}`}
-                          className="card-img-top"
-                          alt={p.name}
-                          width="100px"
-                          height={"100px"}
-                        />
+      <div className="container-fluid m-3 p-3 dashboard">
+        <div className="row ">
+          <div className="col-md-2">
+            <AdminMenu />
+          </div>
+          <div className="col-md-8 ">
+            <h1 className="text-center"><b>All Orders</b></h1>
+            {orders?.map((o, i) => {
+              return (
+                <div className="border shadow">
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Buyer</th>
+                        <th scope="col"> Date</th>
+                        <th scope="col">Payment</th>
+                        <th scope="col">Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{i + 1}</td>
+                        <td>
+                          <Select
+                            bordered={false}
+                            onChange={(value) => handleChange(o._id, value)}
+                            defaultValue={o?.status}
+                          >
+                            {status.map((s, i) => (
+                              <Option key={i} value={s}>
+                                {s}
+                              </Option>
+                            ))}
+                          </Select>
+                        </td>
+                        <td>{o?.buyer?.name}</td>
+                        <td>{moment(o?.createdAt).format("MMMM Do YYYY, h:mm:ss a")}</td>
+                        <td>{o?.payment.success ? "Success" : "Failed"}</td>
+                        <td>{o?.products?.length}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div className="container">
+                    {o?.products?.map((p, i) => (
+                      <div className="row mb-2 p-3 card flex-row" key={p._id}>
+                        <div className="col-md-4">
+                          <img
+                            src={`/api/v1/product/product-photo/${p._id}`}
+                            className="card-img-top"
+                            alt={p.name}
+                            width="100%"
+                            height={"auto"}
+                          />
+                        </div>
+                        <div className="col-md-8">
+                          <h5><b>{p.name}</b></h5>
+                          <p>{p.description}</p>
+                          <h6 className="card-price">MRP: {p.price.toLocaleString("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                          })}
+                          </h6>
+                        </div>
                       </div>
-                      <div className="col-md-8">
-                        <p>{p.name}</p>
-                        <p>{p.description.substring(0, 30)}</p>
-                        <p>Price : {p.price}</p>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </Layout>

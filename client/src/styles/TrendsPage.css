@@ -1,0 +1,87 @@
+.trend-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.trend-page .card {
+  background-color: rgba(202, 202, 202, 0.097);
+  width: 18rem;
+}
+
+.trend-page .card-name-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.trend-page .card-price {
+  color: green;
+  font-weight: bold;
+}
+
+.trend-page .card-text {
+  color: rgb(90, 89, 89);
+}
+
+.trend-page .card img:hover {
+  transform: scale(0.9);
+}
+
+.trend-page .card-img-top {
+  height: 300px !important;
+}
+
+.a1z1 {
+  text-align: center;
+}
+
+.a1z1 h1 {
+  font-weight: bold;
+  text-align: center;
+
+}
+
+/* Button Styles */
+.button-container {
+  text-align: center;
+}
+
+.a1z1-primary-button {
+  width: 200px;
+  background-color: rgb(38, 38, 38);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 5px 5px;
+}
+
+.a1z1-primary-button:hover {
+  background-color: #626262;
+}
+
+.a1z1-secondary-button:hover {
+  background-color: #626262;
+}
+
+.a1z1-secondary-button {
+  width: 200px;
+  background-color: rgb(38, 38, 38);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.trends-description{
+  background-color: rgba(226, 234, 241, 0.273)
+}

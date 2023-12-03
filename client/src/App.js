@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import Trends from "./pages/Trends";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Policy from "./pages/Policy";
@@ -24,12 +25,31 @@ import Categories from "./pages/Categories";
 import CategoryProduct from "./pages/CategoryProduct";
 import CartPage from "./pages/CartPage";
 import AdminOrders from "./pages/Admin/AdminOrders";
+import Developers from "./pages/Developers";
+import WomensCollection from "./pages/WomensCollection";
+import MensCollection from "./pages/MensCollection";
+import KidsCollection from "./pages/KidsCollection";
+import TrendyWear from "./pages/TrendyWear";
+import FormalWear from "./pages/FormalWear";
+import Novel from "./pages/Novel";
+import RecommendationPage from "./pages/Rcommendation";
+
+
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/novel" element={<Novel/>} />
+        <Route path="/recommendation" element={<RecommendationPage/>} />
+        <Route path="/men-collection" element={<MensCollection/>}/>
+        <Route path="/trendywear" element={<TrendyWear/>}/>
+        <Route path="/formalwear" element={<FormalWear/>}/>
+        <Route path="/women-collection" element={<WomensCollection/>}/>
+        <Route path="/kids-collection" element={<KidsCollection/>}/>
+        <Route path="/developers" element={<Developers/>}/>
         <Route path="/product/:slug" element={<ProductDetails />} />
+        <Route path="/trends" element={<Trends/>} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/category/:slug" element={<CategoryProduct />} />

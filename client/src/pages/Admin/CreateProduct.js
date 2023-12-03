@@ -18,6 +18,7 @@ const CreateProduct = () => {
   const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
 
+
   //get all category
   const getAllCategory = async () => {
     try {
@@ -46,6 +47,7 @@ const CreateProduct = () => {
       productData.append("quantity", quantity);
       productData.append("photo", photo);
       productData.append("category", category);
+
       const { data } = axios.post(
         "/api/v1/product/create-product",
         productData
@@ -66,11 +68,11 @@ const CreateProduct = () => {
     <Layout title={"Dashboard - Create Product"}>
       <div className="container-fluid m-3 p-3 dashboard">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-2">
             <AdminMenu />
           </div>
-          <div className="col-md-9">
-            <h1>Create Product</h1>
+          <div className="col-md-8">
+            <h1><b>Create Product</b></h1>
             <div className="m-1 w-75">
               <Select
                 bordered={false}
@@ -149,6 +151,8 @@ const CreateProduct = () => {
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
+             
+
               <div className="mb-3">
                 <Select
                   bordered={false}
